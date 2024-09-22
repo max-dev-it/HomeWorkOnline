@@ -7,6 +7,8 @@ const answer3 = document.getElementById('answerThreeBtn');
 const answer4 = document.getElementById('answerFourBtn');
 const quastion = document.getElementById('questionDiv');
 
+
+
 let currentAnswerRu = "";
 let currentAnswerEng = "";
 
@@ -26,6 +28,7 @@ answer3.addEventListener('click', function() {
 answer4.addEventListener('click', function() {
     checkAnswer(answer4.textContent, answer4);
 });
+
 
 
 async function readCsv(filePath) {
@@ -119,8 +122,8 @@ function generateQuestion(currentNumberAnswer) {
 }
 
 
-async function main() {
-    const filePath = './csv/lesson_1.csv';
+async function main(numberLesson) {
+    const filePath = `./csv/lesson_${numberLesson}.csv`;
     dataQuestions = await readCsv(filePath);
     console.log(dataQuestions);
     currentNumberAnswer = 0;
@@ -128,4 +131,9 @@ async function main() {
 }
 
 
-main();
+// Проверка параметров URL
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('main') === 'true') {
+    const lessonNumber = urlParams.get('lessonNumber');
+    main(lessonNumber);
+}

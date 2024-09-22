@@ -4,7 +4,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.header-logo {
+/* .header-logo {
     font-size: 24px;
     padding: 5px;
     font-family: Arial, Helvetica, sans-serif;
@@ -14,7 +14,40 @@ body {
     background-color: rgb(0, 75, 0);
     color: white;
     text-align: center;
+} */
+
+.header {
+    display: flex;
+    align-items: center; /* Выравнивание элементов по вертикали */
+    justify-content: space-between; /* Раздвигаем элементы по краям */
+    padding: 0 10px; /* Отступы по бокам для красивого вида */
+    background-color: rgb(0, 75, 0);
+    color: white;
+    height: 50px;
 }
+
+.logo {
+    margin-right: auto; /* Логотип-ссылка слева */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    font-size: 1rem; /* Размер текста */
+    color: inherit; /* Цвет текста наследует от родителя */
+    height: 100%; /* Растягиваем ссылку на всю высоту header */
+    display: flex; /* Используем flexbox для центрирования текста */
+    align-items: center; /* Вертикальное центрирование текста */
+    padding: 0 10px; /* Отступы внутри ссылки */
+    cursor: pointer; /* Курсор указывает на возможность нажатия */
+    padding: 0px 20px;
+}
+
+.header-title {
+    margin: 0 auto; /* Центрируем текст в оставшемся пространстве */
+    text-align: center; /* Текст по центру */
+    flex-grow: 1; /* Заголовок занимает оставшееся пространство */
+    font-size: 24px;
+}
+
+
+
 
 .content {
     padding: 20px;
@@ -66,4 +99,38 @@ body {
     flex: 1 1 calc(50% - 10px);
     text-align: center;
     border: none;
+}
+
+
+
+
+
+.menu-lessons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Отступы между элементами списка */
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 10px; /* Внутренние отступы для списка */
+    margin: 0;
+}
+
+.menu-lessons-item {
+    flex: 1; /* Растягиваем элементы на всю ширину */
+    display: block;
+    width: 100%; /* Занимаем всю ширину родителя (li) */
+    padding: 15px 0; /* Внутренние отступы */
+    text-align: center; /* Центрируем текст */
+    background-color: #4CAF50; /* Цвет фона */
+    color: white; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    border: none; /* Убираем границу */
+    cursor: pointer; /* Курсор указывает на возможность нажатия */
+}
+
+.menu-lessons-item:hover {
+    background-color: #45a049; /* Цвет фона при наведении */
+}
+
+.menu-lessons-item:active {
+    background-color: #3e8e41; /* Цвет фона при нажатии */
 }
