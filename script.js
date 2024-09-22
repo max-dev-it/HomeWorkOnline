@@ -120,6 +120,7 @@ function generateQuestion(currentNumberAnswer) {
 
 async function main() {
     const filePath = './csv/lesson_1.csv';
+    console.log("Start loading...");
     dataQuestions = await readCsv(filePath);
     currentNumberAnswer = 0;
     generateQuestion(currentNumberAnswer);
