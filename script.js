@@ -15,22 +15,18 @@ let currentAnswerEng = "";
 
 answer1.addEventListener('click', function() {
     checkAnswer(answer1.textContent, answer1);
-    answer1.classList.remove('hover');
 });
 
 answer2.addEventListener('click', function() {
     checkAnswer(answer2.textContent, answer2);
-    answer2.classList.remove('hover');
 });
 
 answer3.addEventListener('click', function() {
     checkAnswer(answer3.textContent, answer3);
-    answer3.classList.remove('hover');
 });
 
 answer4.addEventListener('click', function() {
     checkAnswer(answer4.textContent, answer4);
-    answer4.classList.remove('hover');
 });
 
 
