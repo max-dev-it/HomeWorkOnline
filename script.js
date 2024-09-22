@@ -36,9 +36,8 @@ async function readCsv(filePath) {
         }
         const csvText = await response.text();
         const rows = csvText.split('\r\n').map(row => row.split(';'));
-        console.log(rows);
 
-        return rows; // Возвращаем результат
+        return rows;
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     }
@@ -120,17 +119,11 @@ function generateQuestion(currentNumberAnswer) {
 
 async function main() {
     const filePath = './csv/lesson_1.csv';
-    console.log("Start loading...");
     dataQuestions = await readCsv(filePath);
+    console.log(dataQuestions);
     currentNumberAnswer = 0;
     generateQuestion(currentNumberAnswer);
 }
 
-// function main() {
-//     // const filePath = './csv/lesson_1.csv';
-//     dataQuestions = require('./module');
-//     currentNumberAnswer = 0;
-//     generateQuestion(currentNumberAnswer);
-// }
 
 main();
