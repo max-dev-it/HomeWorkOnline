@@ -35,7 +35,9 @@ async function readCsv(filePath) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
         const csvText = await response.text();
-        const rows = csvText.split('\r\n').map(row => row.split(';'));
+        // const rows = csvText.split('\r\n').map(row => row.split(';'));
+        const rows = csvText.split('\n').map(row => row.split(';'));
+
 
         return rows;
     } catch (error) {
