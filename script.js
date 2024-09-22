@@ -96,7 +96,7 @@ function showError(buttonElement) {
 
     setTimeout(() => {
         buttonElement.classList.remove('answer-error');
-    }, 300);
+    }, 200);
 }
 
 
