@@ -36,6 +36,8 @@ async function readCsv(filePath) {
         }
         const csvText = await response.text();
         const rows = csvText.split('\r\n').map(row => row.split(';'));
+        console.log(rows);
+
         return rows; // Возвращаем результат
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
@@ -122,5 +124,12 @@ async function main() {
     currentNumberAnswer = 0;
     generateQuestion(currentNumberAnswer);
 }
+
+// function main() {
+//     // const filePath = './csv/lesson_1.csv';
+//     dataQuestions = require('./module');
+//     currentNumberAnswer = 0;
+//     generateQuestion(currentNumberAnswer);
+// }
 
 main();
